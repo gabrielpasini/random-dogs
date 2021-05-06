@@ -6,7 +6,9 @@ function App() {
   const [images, setImages] = useState([]);
 
   const getImages = async () => {
-    const resImages = await axios.get("https://dog.ceo/api/breed/lhasa/images");
+    const resImages = await axios.get(
+      "https://dog.ceo/api/breeds/image/random/50"
+    );
     setImages(resImages.data.message);
   };
 
@@ -16,11 +18,10 @@ function App() {
 
   return (
     <Container>
-      {images.map((img, index) => (
+      {images?.map((img, index) => (
         <ImageBox key={index}>
           <Img src={img} />
           <Text>Dog: {index + 1}</Text>
-          <Text>Link: {img}</Text>
         </ImageBox>
       ))}
     </Container>
