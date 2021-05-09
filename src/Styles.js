@@ -7,10 +7,10 @@ export const Container = styled.div`
   width: 100%;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: flex-start;
+  align-items: center;
   align-content: flex-start;
   justify-content: space-evenly;
-  background-color: #ccc;
+  background-color: #30a2ff;
   overflow-y: scroll;
   top: 0;
   left: 0;
@@ -23,10 +23,18 @@ export const ImageBox = styled.div`
   justify-content: space-between;
   width: 20%;
   height: auto;
-  margin: 20px;
+  margin: 2%;
   border-radius: 10px;
   background-color: #fff;
-  box-shadow: 5px 5px 20px #aaa;
+  box-shadow: 6px 6px 20px #222;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  :hover {
+    width: 22%;
+    margin: 1%;
+  }
 `;
 
 export const Img = styled.img`
@@ -44,4 +52,12 @@ export const Text = styled.p`
   font-family: Impact;
   color: #777;
   margin: 10px;
+`;
+
+export const LargeImg = styled.img`
+  position: inline-block;
+  border-radius: 10px;
+  width: auto;
+  height: 90%;
+  margin: 2%;
 `;
