@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Container, ImageBox, Img, Text, LargeImg } from "./Styles";
+import { Container, ImageBox, Img, Text, LargeImg, Button } from "./Styles";
 import Loading from "./Loading";
 import axios from "axios";
 
 function App() {
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [effect, setEffect] = useState(false);
   const [selectedPhoto, setSelectedPhoto] = useState("");
 
   const getImages = async () => {
@@ -17,12 +18,21 @@ function App() {
     setLoading(false);
   };
 
+  const runEffect = () => {
+    if (!effect) {
+      setEffect(true);
+      setTimeout(() => {
+        setEffect(false);
+      }, 2000);
+    }
+  };
+
   useEffect(() => {
     getImages();
   }, []);
 
   return (
-    <Container>
+    <Container hideCroll={selectedPhoto}>
       <Loading show={loading} />
       {!selectedPhoto &&
         images.length > 0 &&
@@ -33,7 +43,14 @@ function App() {
           </ImageBox>
         ))}
       {selectedPhoto && (
-        <LargeImg src={selectedPhoto} onClick={() => setSelectedPhoto("")} />
+        <>
+          <Button onClick={() => setSelectedPhoto("")}>{"<"}</Button>
+          <LargeImg
+            src={selectedPhoto}
+            effect={effect}
+            onClick={() => runEffect()}
+          />
+        </>
       )}
     </Container>
   );
