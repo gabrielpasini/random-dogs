@@ -53,9 +53,9 @@ export const ImageBox = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  width: 20%;
+  width: 18%;
   height: auto;
-  margin: 2%;
+  margin: 1%;
   border-radius: 10px;
   box-shadow: 0px 0px 0px #222;
   background-color: rgba(255, 255, 255, 0.5);
@@ -69,7 +69,7 @@ export const ImageBox = styled.div`
     cursor: pointer;
     transform: translateY(-10px);
     box-shadow: 0px 10px 10px #222;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.9);
   }
 `;
 
@@ -86,6 +86,7 @@ export const Text = styled.p`
   word-wrap: break-word;
   word-break: break-all;
   font-family: Impact;
+  font-size: 20px;
   color: #666;
   margin: 10px;
 `;
